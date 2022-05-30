@@ -1,0 +1,111 @@
+/*==============================  start navbar =============================*/
+:root{
+    --a-color: rgb(224, 222, 222);
+    --a-hover: rgb(247, 183, 64);
+    --index : rgb(247, 183, 64);
+}
+
+    body {
+        background-color: whitesmoke;
+    }
+
+
+a{
+    text-decoration: none;
+    color: var(--a-color);
+
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+       color: rgb(224, 222, 222);
+    /* background-color: rgba(0,0,0,0); */
+    padding: 20px 0;
+    font-weight: 400;
+}
+
+header nav a {
+    margin: 0 2.5%;
+    transition: all 0.5s ;
+    -webkit-transition: all 0.5s ;
+    -moz-transition: all 0.5s ;
+    -ms-transition: all 0.5s ;
+    -o-transition: all 0.5s ;
+    position: relative;
+}
+
+header nav a:hover{
+    /* color: var(--index); */
+    color: var(--index);
+}
+
+header nav a::before{
+    content: '';
+    transition: all 0.5s ;
+    -webkit-transition: all 0.5s ;
+    -moz-transition: all 0.5s ;
+    -ms-transition: all 0.5s ;
+    -o-transition: all 0.5s ;
+    position:absolute;
+    width: 0px;
+    height: 3px;
+    top: 25px;
+    background-color: var(--index);
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+}
+
+header nav a:hover:first-child::before{
+    width: 44px;
+}
+header nav a:hover:nth-child(2):before{
+    width: 44px;
+}
+header nav a:hover:nth-child(3):before{
+    width: 66px;
+}
+header nav a:hover:nth-child(4):before{
+    width: 64px;
+}
+header nav a:hover:last-child::before{
+    width: 76px;
+}
+
+
+header .cart-nav i{
+    font-size: 1.1em;
+    margin-right: 5px;
+    color: var(--index);
+}
+
+header #nmb-card{
+    margin-right: 10px;
+    padding: 0px 7px;
+    border-radius: 50%;
+    background-color: var(--index);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+header .cart-nav a{
+    margin-left: 10px;
+    transition: all 0.5s ;
+    -webkit-transition: all 0.5s ;
+    -moz-transition: all 0.5s ;
+    -ms-transition: all 0.5s ;
+    -o-transition: all 0.5s ;
+}
+header .cart-nav a:hover{
+    color: var(--index);
+}
+
+
+
+
+
+
+/*==============================  end navbar =============================*/

@@ -1,0 +1,31 @@
+:root{
+    --index : rgb(247, 183, 64);
+}
+
+
+.blog-land{
+        width: 100%;
+        min-height: 330px;
+        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url("../image/journy.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        background-attachment: fixed;
+        margin-bottom: 70px;
+
+    }
+    .blog header{
+        background-color: black;
+        align-items: center;
+        
+    }
+
+    .blog-land-title{
+        width: 100%;
+    }
+    .blog-land-title h1{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }

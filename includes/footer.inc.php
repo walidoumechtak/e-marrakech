@@ -15,6 +15,22 @@
 <script src="themes/js/owl.carousel.min.js"></script>
 
 <script>
+
+
+
+                $(document).ready(function(){
+                    $('#input-s').focus(function(){
+                        $('#input-s').addClass('focus-input');
+                    });
+
+                    $('#input-s').blur(function(){
+                        $('#input-s').removeClass('focus-input');
+                    });
+                    });
+            
+
+
+
  
  $('.owl-carousel').owlCarousel({
     
@@ -36,6 +52,36 @@
         }
     }
 })
+
+
+/* menu botton */
+
+
+
+let menubutton = document.querySelector('.non');
+let mynav = document.querySelector('nav');
+
+menubutton.onclick = function(){
+        this.classList.toggle('active');
+        mynav.classList.toggle('active');
+}
+
+
+/*-----------------------------------*/
+
+let allnav = document.querySelectorAll('nav');
+
+allnav.forEach(nv => {
+        nv.addEventListener('click', (e) =>{
+
+                if(mynav.classList.contains('active') && menubutton.classList.contains('active')){
+                        mynav.classList.remove('active');
+                        menubutton.classList.remove('active');
+                }
+
+        })
+})
+
 
 </script>
 

@@ -13,7 +13,9 @@
     <div class="down-footer">
                 <div class="container">
                     <div class="rows">
+                        <span>
                     &copy; Copyright 2022 by walid oumechtak - All rights Reserved
+                    </span>
                     <div class="payment-image">
                         <img src="themes/image/pay/master.png" alt="mastercard">
                         <img src="themes/image/pay/paypal.png" alt="paypal">

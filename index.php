@@ -2,6 +2,7 @@
         $includeF = '';
         $includeIndexCss = '';
         $includeNav = '';
+        $navblack = '';
     include "includes/header.inc.php";
 ?>
 
@@ -17,17 +18,17 @@
             </h1>
             <div class="button-land">
                 <!-- <div class="col-md-6"> -->
-                        <a href="#" id="land-btn-1">Create Account</a>
+                        <a href="registre.php" id="land-btn-1">Create Account</a>
                 <!-- </div> -->
                 <!-- <div class="col-md-6"> -->
-                        <a href="#" id="land-btn-2">Let's Shop</a>
+                        <a href="books.php" id="land-btn-2">Let's Shop</a>
                 <!-- </div> -->
             </div>
             </div>
 
             <div class="container search">
                 <form action="" method="POST">
-                    <label for="srch">Find your book here :</label>
+                    <!-- <label for="srch">Find your book here :</label> -->
                     <input type="text" id="srch" name="search" placeholder="Name of the book">
                     <input type="submit" value="Search">
                 </form>
@@ -46,7 +47,9 @@
                         
                           <div class="row">
                           <div class="col-md-3 card py-0 px-0 mb-2" style="width: 13.125rem;">
+                            <div class="image-box">
                                 <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
+                                </div>
                                 <span class="prix">23<span id="dollar">$</span> </span>
                                     <div class="card-body px-0 py-0">
                                         <h5 class="card-title mt-4 ms-3 mb-2">Tout les Femme</h5>
@@ -58,7 +61,9 @@
                                     </div>
                             </div>
                           <div class="col-md-3 card py-0 px-0 mb-2" style="width: 13.125rem;">
+                            <div class="image-box">
                                 <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
+                                </div>
                                 <span class="prix">23<span id="dollar">$</span> </span>
                                     <div class="card-body px-0 py-0">
                                         <h5 class="card-title mt-4 ms-3 mb-2">Tout les Femme</h5>
@@ -70,7 +75,9 @@
                                     </div>
                             </div>
                           <div class="col-md-3 card py-0 px-0 mb-2" style="width: 13.125rem;">
+                            <div class="image-box">
                                 <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
+                                </div>
                                 <span class="prix">23<span id="dollar">$</span> </span>
                                     <div class="card-body px-0 py-0">
                                         <h5 class="card-title mt-4 ms-3 mb-2">Tout les Femme</h5>
@@ -82,7 +89,9 @@
                                     </div>
                             </div>
                           <div class="col-md-3 card py-0 px-0 mb-2" style="width: 13.125rem;">
+                            <div class="image-box">
                                 <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
+                                </div>
                                 <span class="prix">23<span id="dollar">$</span> </span>
                                     <div class="card-body px-0 py-0">
                                         <h5 class="card-title mt-4 ms-3 mb-2">Tout les Femme</h5>
@@ -137,64 +146,13 @@
                         <div class="content-blog">
                         <h4>The computer siences</h4>
                         <p class="mt-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus? walid oumechtak</p>
-                        <a class="ms-5" href="#">Read More</a>
-                        <span class="ms-4">25 octobre</span>
+                        
+                        <a href="#">Read More</a>
+                        <span>25 octobre</span>
+
                         </div>
                     </div>
-                    <div class="item" >
-                        <img src="themes/blogImage/129.jpeg" alt="">
-                        <div class="content-blog">
-                        <h4>The computer siences</h4>
-                        <p class="mt-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus? walid oumechtak</p>
-                        <a class="ms-5" href="#">Read More</a>
-                        <span class="ms-4">25 octobre</span>
-                        </div>
-                    </div>
-                    <div class="item" >
-                        <img src="themes/blogImage/129.jpeg" alt="">
-                        <div class="content-blog">
-                        <h4>The computer siences</h4>
-                        <p class="mt-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus? walid oumechtak</p>
-                        <a class="ms-5" href="#">Read More</a>
-                        <span class="ms-4">25 octobre</span>
-                        </div>
-                    </div>
-                    <div class="item" >
-                        <img src="themes/blogImage/129.jpeg" alt="">
-                        <div class="content-blog">
-                        <h4>The computer siences</h4>
-                        <p class="mt-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus? walid oumechtak</p>
-                        <a class="ms-5" href="#">Read More</a>
-                        <span class="ms-4">25 octobre</span>
-                        </div>
-                    </div>
-                    <div class="item" >
-                        <img src="themes/blogImage/129.jpeg" alt="">
-                        <div class="content-blog">
-                        <h4>The computer siences</h4>
-                        <p class="mt-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus? walid oumechtak</p>
-                        <a class="ms-5" href="#">Read More</a>
-                        <span class="ms-4">25 octobre</span>
-                        </div>
-                    </div>
-                    <div class="item" >
-                        <img src="themes/blogImage/129.jpeg" alt="">
-                        <div class="content-blog">
-                        <h4>The computer siences</h4>
-                        <p class="mt-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus? walid oumechtak</p>
-                        <a class="ms-5" href="#">Read More</a>
-                        <span class="ms-4">25 octobre</span>
-                        </div>
-                    </div>
-                    <div class="item" >
-                        <img src="themes/blogImage/129.jpeg" alt="">
-                        <div class="content-blog">
-                        <h4>The computer siences</h4>
-                        <p class="mt-3 mb-3">walid oumechtak sit amet, consectetur adipisicing elit. Doloribus? walid oumechtak</p>
-                        <a class="ms-5" href="#">Read More</a>
-                        <span class="ms-4">25 octobre</span>
-                        </div>
-                    </div>
+                   
                     
                 </div>
                 </div>
@@ -209,7 +167,7 @@
                 <div class="conatainer">
                     <div class="rows">
                         <h4>Start your new book journey with E-Marrakech</h4>
-                        <a href=""> <i class="fa-solid fa-bookmark"></i> SHOP NOW</a>
+                        <a href="books.php"> <i class="fa-solid fa-bookmark"></i> SHOP NOW</a>
                     </div>
                 </div>
             </div>

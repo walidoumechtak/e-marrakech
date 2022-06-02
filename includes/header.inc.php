@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="themes/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="themes/css/all.min.css">
+    <link rel="stylesheet" href="themes/css/footer.css">
     <?php if(isset($includeIndexCss)){?>
       <link rel="stylesheet" type="text/css" href="themes/css/index.css">
     <?php } ?>
@@ -30,6 +31,15 @@
     <?php } ?>
     <?php if(isset($includeBlog)){?>
       <link rel="stylesheet" type="text/css" href="themes/css/blog.css">
+    <?php } ?>
+    <?php if(isset($includeContact)){?>
+      <link rel="stylesheet" type="text/css" href="themes/css/contact.css">
+    <?php } ?>
+    <?php if(isset($includeShoping)){?>
+      <link rel="stylesheet" type="text/css" href="themes/css/shoping.css">
+    <?php } ?>
+    <?php if(isset($includeProuctPage)){?>
+      <link rel="stylesheet" type="text/css" href="themes/css/product-page.css">
     <?php } ?>
     <link rel="stylesheet" type="text/css" href="themes/css/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="themes/css/owl.theme.default.min.css">

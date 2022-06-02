@@ -1,12 +1,14 @@
 <!-- <div class="container homeNav"> -->
-<header class="row  ms-0">
-    <div class="logo col-md-3 text-center">
+    <div <?php  if(!isset($navblack)) echo 'id="nav-cont"' ?> class="allnav">
+    <div class="container" >
+<header  class="ms-0">
+    <div class="logo">
             <!-- E-Marrakech -->
-            <a href="">
+            <a href="index.php">
                 <img src="themes/image/logo.png" alt="logo-ebooking">
             </a>
     </div>
-    <nav class="col-md-6 text-center">
+    <nav>
         <a href="index.php">Home</a>
         <a href="books.php">Books</a>
         <a href="about.php">About Us</a>
@@ -14,8 +16,13 @@
         <a href="contact.php">Contact Us</a>
     </nav>
 
-    <div class="cart-nav col-md-3 text-center">
-            <a href=""> <i class="fa-solid fa-cart-shopping"></i> </a> <span id="nmb-card">1</span> <span> | </span> <a href="login.php">Login</a>
+    <div class="cart-nav">
+           <div class="oui"> <a href="shoping.php"> <i class="fa-solid fa-cart-shopping"></i> </a> <span id="nmb-card">1</span> <span> | </span> <a href="login.php">Login</a></div>
+           <div class="non">
+
+           </div>
     </div>
 </header>
+</div>
+</div>
 <!-- </div> -->

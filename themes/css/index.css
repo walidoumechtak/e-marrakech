@@ -86,6 +86,46 @@
     color: rgba(0, 0, 0, 0.8);
 }
 
+/*= ==============================  media land page content --------------------*/
+
+@media screen and (max-width:790px) {
+    .landing-page .land1 h1{
+        font-size: 30px;
+    }
+
+    .button-land{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-land a{
+        margin-bottom: 15px;
+        width: 75%;
+    }
+}
+
+@media screen and (max-width:609px) {
+    .landing-page .land1 h1{
+        font-size: 20px;
+    }
+
+    .landing-page .button-land a{
+        padding: 7px 13px !important;
+
+    }
+}
+
+@media screen and (max-width:433px){
+    .landing-page .land1 h1{
+        font-size: 26px;
+    }
+    .landing-page .land1 {
+        width: 85%;
+    }
+}
+/*= ==============================  media land page content --------------------*/
 
 .search{
     width: 60%;
@@ -107,7 +147,7 @@
 
 .search form{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -117,7 +157,7 @@
     margin-right: 4%;
 }
 .search input[type=text]{
-    width: 50%;
+    width: 70%;
     padding: 3px 7px;
     margin-right: 4%;
     outline: none;
@@ -136,7 +176,7 @@
     border: none;
     background-color: white;
     border-radius: 10px;
-    margin-right: 4%;
+    /* margin-right: 4%; */
     -webkit-border-radius: 15px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -147,6 +187,26 @@
     outline: none;
 }
 
+@media screen and (max-width:450px) {
+    .search {
+        width: 92% !important;
+    }
+}
+@media screen and (max-width:630px) {
+    .search {
+        width: 80%;
+    }
+}
+@media screen and (max-width:819px) {
+    .search input[type=text]{
+        margin: 0 0 18px 0;
+        width: 100%;
+    }
+}
+    
+
+
+
 /*==============================  end landing page =============================*/
 
 
@@ -154,6 +214,7 @@
 /*==============================  start top selle page =============================*/
 
     .top-book .row{
+        margin-top: 19px;
         justify-content: space-evenly;
     }
 
@@ -164,11 +225,30 @@
         -moz-border-radius: 0;
         -ms-border-radius: 0;
         -o-border-radius: 0;
+    }
+
+.top-book .row .card .image-box{
+    overflow: hidden;
+    width: 100%;
+
 }
+
 .top-book .row .card img{
     height: 239px;
     width: 208px;
+    transition: all 0.4s ;
+    -webkit-transition: all 0.4s ;
+    -moz-transition: all 0.4s ;
+    -ms-transition: all 0.4s ;
+    -o-transition: all 0.4s ;
+}
 
+.top-book .row .card img:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
 }
 
 .top-book .row .card .prix{
@@ -291,12 +371,11 @@
     -o-transition: all 0.5s;
 }
 .best-offer .rows .image-box img:hover{
-        
         transform:scale(110%) translateX(-20px);
-        -webkit-transform: s;
-        -moz-transform: s;
-        -ms-transform: s;
-        -o-transform: s;
+        -webkit-transform:scale(110%) translateX(-20px);
+        -moz-transform:scale(110%) translateX(-20px);
+        -ms-transform:scale(110%) translateX(-20px);
+        -o-transform:scale(110%) translateX(-20px);
 }
 
 .best-offer::before{
@@ -320,6 +399,46 @@
     z-index: -1;
 }
 
+@media screen and (max-width:530px){
+
+    .best-offer .rows{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .best-offer .rows .image-box img:hover{
+        transform:scale(110%);
+        -webkit-transform:scale(110%);
+        -moz-transform:scale(110%);
+        -ms-transform:scale(110%);
+        -o-transform:scale(110%);
+}
+
+    .best-offer .rows .content{
+        margin-bottom: 30px;
+    }
+
+}
+
+@media screen and (max-width:767px) {
+    .best-offer .rows .content{
+        width: 100%;
+    }
+
+    .best-offer .rows .image-box img{
+        width: 100%;
+        height: auto;
+    }
+
+    .best-offer::before{
+        background-color: white;
+    }
+
+    
+}
+
+
 /*==============================  end best offer =============================*/
 
 
@@ -331,6 +450,8 @@
 
 .tesm .item .content-blog{
     padding: 14px;
+    position: relative;
+
 }
 .tesm .item .content-blog h4::before{
     content: '';
@@ -369,6 +490,9 @@
     -moz-border-radius:20px;
     -ms-border-radius:20px;
     -o-border-radius:20px;
+    position: absolute;
+    top: -27px;
+    right: 24px;
 }
 
     .tesm .item img{
@@ -445,89 +569,23 @@
 }
 
 
+@media screen and (max-width: 768px){
+    .journy .rows {
+        flex-direction: column;
+
+    }
+    .journy .rows h4{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+    
+
+
+
 
 /*==============================  end your journy here =============================*/
 
-
-/*==============================  start footer =============================*/
-
-    footer{
-        background-color: rgb(26, 25, 25);
-        color: white;
-        padding-top: 40px;
-    }
-
-    footer .up-footer{
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        margin-bottom: 33px;
-    }
-
-    footer .down-footer{
-        background-color: rgb(14, 13, 13);
-        padding: 16px 10px;
-    } 
-
-    footer .down-footer .rows{
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap
-    }
-
-    footer .down-footer .payment-image img{
-        width: 55px;
-        height: 55px;
-    }
-
-    footer .up-footer .social-media{
-        width: 20%;
-        display: flex;
-        justify-content: space-evenly;
-        
-    }
-
-    footer .up-footer .social-media i{
-        padding: 8px;
-        width: 35px;
-        height: 35px;
-        margin: 0 7px;
-        text-align: center;
-        color: rgb(138, 138, 138);
-        border: 2px solid rgb(138, 138, 138);
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
-        transition: all 0.5s;
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -ms-transition: all 0.5s;
-        -o-transition: all 0.5s;
-}
-
-footer .up-footer .social-media i:hover{
-    color: white;
-    background-color: var(--index);
-    border: 2px solid var(--index);
-    cursor: pointer;
-
-}
-
-
-
-footer .up-footer .social-media i:first-child{
-    padding: 10px;
-    font-size: 18px;
-    line-height: 13px;
-}
-
-
-
-/*==============================  end footer =============================*/
 
 
 

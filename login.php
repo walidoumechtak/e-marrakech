@@ -6,6 +6,69 @@
 
 ?>
 
+    <?php  
+    
+            if(isset($_SESSION['login'])){
+                    header('location: index.php');
+                    exit();
+            }else{
+
+                if(isset($_POST['go'])){
+                $email = $_POST['email'];
+                $pass = $_POST['pass'];
+
+
+                // admins sql ==========================================================================================
+                
+                $queryA = mysqli_query($con,"select * from admins where email = '$email' and password = '$pass'");
+                
+                if(mysqli_num_rows($queryA) == 1){
+                        $rowA = mysqli_fetch_array($queryA);
+
+                        $_SESSION['id_admin'] = $rowA['id_admin'];
+                        $_SESSION['fullname'] = $rowA['fullName'];
+                        $_SESSION['login'] = $email;
+                        $_SESSION['pass'] = $pass;
+
+                        header('location: index.php');
+                        exit();
+                }else{
+                    echo "<div class='login-alert alert alert-dismissible fade show' role='alert'>Your Email or password is incorrect
+                    
+                    <button id='registreB' type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>
+                    </div>";
+                }
+
+                // users sql ============================================================================================
+
+                $query = mysqli_query($con,"select * from users where email = '$email' and password = '$pass'");
+                
+                if(mysqli_num_rows($query) == 1){
+                        $row = mysqli_fetch_array($query);
+
+                        $_SESSION['id_users'] = $row['id_user'];
+                        $_SESSION['fullname'] = $row['fullname'];
+                        $_SESSION['login'] = $email;
+                        $_SESSION['pass'] = $pass;
+
+                        header('location: index.php');
+                        exit();
+                }else{
+                    echo "<div class='login-alert alert alert-dismissible fade show' role='alert'>Your Email or password is incorrect
+                    
+                    <button id='registreB' type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>
+                    </div>";
+                }
+
+
+            }
+            }
+
+    ?>
 
 
 <div class="container">

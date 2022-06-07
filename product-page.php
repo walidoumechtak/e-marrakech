@@ -1,4 +1,4 @@
-<?php $title ='E-Marrakech Books';
+<?php $title ='Book';
         $includeF = '';
         $includeNav = '';
         $includeProuctPage = "";

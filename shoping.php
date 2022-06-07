@@ -1,4 +1,6 @@
-<?php $title ='E-Marrakech Books';
+<?php   
+        session_start();
+        $title ='Shoping cart'; 
         $includeF = '';
         $includeNav = '';
         $includeShoping = "";

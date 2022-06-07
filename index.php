@@ -1,4 +1,6 @@
-<?php $title ='E-Marrakech Books';
+<?php
+        session_start();
+        $title ='E-Marrakech Books';
         $includeF = '';
         $includeIndexCss = '';
         $includeNav = '';
@@ -18,7 +20,18 @@
             </h1>
             <div class="button-land">
                 <!-- <div class="col-md-6"> -->
-                        <a href="registre.php" id="land-btn-1">Create Account</a>
+                    <?php 
+                    if(isset($_SESSION['login'])){
+                        ?>
+                            <a href="books.php" id="land-btn-1">Check Our Books</a>
+                    <?php
+                    }   else{
+                    ?>
+                         <a href="registre.php" id="land-btn-1">Create Account</a>
+                    <?php
+                    }
+                    ?>
+
                 <!-- </div> -->
                 <!-- <div class="col-md-6"> -->
                         <a href="books.php" id="land-btn-2">Let's Shop</a>
@@ -48,7 +61,7 @@
                           <div class="row">
                           <div class="col-md-3 card py-0 px-0 mb-2" style="width: 13.125rem;">
                             <div class="image-box">
-                                <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
+                                <img src="themes/image/booksimage/ebook1.jpg" class="card-img-top" alt="book">
                                 </div>
                                 <span class="prix">23<span id="dollar">$</span> </span>
                                     <div class="card-body px-0 py-0">
@@ -62,7 +75,7 @@
                             </div>
                           <div class="col-md-3 card py-0 px-0 mb-2" style="width: 13.125rem;">
                             <div class="image-box">
-                                <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
+                                <img src="themes/image/booksimage/multimidialearning.jpg" class="card-img-top" alt="book">
                                 </div>
                                 <span class="prix">23<span id="dollar">$</span> </span>
                                     <div class="card-body px-0 py-0">
@@ -76,7 +89,7 @@
                             </div>
                           <div class="col-md-3 card py-0 px-0 mb-2" style="width: 13.125rem;">
                             <div class="image-box">
-                                <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
+                                <img src="themes/image/booksimage/physics.jpg" class="card-img-top" alt="book">
                                 </div>
                                 <span class="prix">23<span id="dollar">$</span> </span>
                                     <div class="card-body px-0 py-0">
@@ -90,7 +103,7 @@
                             </div>
                           <div class="col-md-3 card py-0 px-0 mb-2" style="width: 13.125rem;">
                             <div class="image-box">
-                                <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
+                                <img src="themes/image/booksimage/psychologie.jpg" class="card-img-top" alt="book">
                                 </div>
                                 <span class="prix">23<span id="dollar">$</span> </span>
                                     <div class="card-body px-0 py-0">

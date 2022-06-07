@@ -1,4 +1,6 @@
-<?php $title ='Books';
+<?php 
+        session_start();
+        $title ='Books';
         $includeBooks = '';
         $includeNav = '';
         $includeF = '';
@@ -37,10 +39,16 @@
                                                             <!-- The sidebar -->
                                 <div class="sidebar">
                                 <span>Categories</span>
-                                <a class="active" href="#home">Home</a>
-                                <a href="#news">News</a>
-                                <a href="#contact">Contact</a>
-                                <a href="#about">About</a>
+                                <?php  
+                                
+                                    $queryCat = mysqli_query($con,"select * from categories");
+                                    while($rowCat = mysqli_fetch_array($queryCat)){
+                                ?>
+
+                                <a href="?idCat=<?php echo $rowCat['id_cat'] ?>" > <?php echo $rowCat['designation'] ?> </a>
+
+                                <?php } ?>
+
                                 </div>
 
                                 
@@ -48,79 +56,29 @@
                     <div class="col-md-9">
                                 <!-- Page content -->
                                 <div class="content">
+
+                                <?php isset($_GET['idCat']) ? $id_cat = $_GET['idCat'] : $id_cat = 1 ;
                                 
+                                        $queryBook = mysqli_query($con, "select * from books where id_cat = $id_cat");
+
+                                        while($rowBook = mysqli_fetch_array($queryBook)){
+                                ?>                                
                                 <div class="card py-0 px-0 mb-3" style="width: 13.125rem;">
-                                <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
-                                <span class="prix">23<span id="dollar">$</span> </span>
+                                <img src="<?php echo $rowBook['image'] ?>" class="card-img-top" alt="book">
+                                <span class="prix"><?php echo $rowBook['price'] ?><span id="dollar">$</span> </span>
                                     <div class="card-body px-0 py-0">
-                                        <h5 class="card-title mt-4 ms-3 mb-2">Tout les Femme</h5>
+                                        <h5 class="card-title mt-4 ms-3 mb-2"><?php echo $rowBook['title'] ?></h5>
                                         <div class="rating ms-3">
                                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i> 
                                         </div> 
                                                                                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                                        <a href="#" class="btn "> <i class="fa-solid fa-cart-plus"></i> Add to carte</a>
+                                        <a href="product-page.php?id_pro=<?php echo $rowBook['id_book'] ?>" class="btn "> <i class="fa-solid fa-cart-plus"></i> Add to carte</a>
                                     </div>
                             </div>
-                                <div class="card py-0 px-0 mb-3" style="width: 13.125rem;">
-                                <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
-                                <span class="prix">23<span id="dollar">$</span> </span>
-                                    <div class="card-body px-0 py-0">
-                                        <h5 class="card-title mt-4 ms-3 mb-2">Tout les Femme</h5>
-                                        <div class="rating ms-3">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i> 
-                                        </div> 
-                                                                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                                        <a href="#" class="btn "> <i class="fa-solid fa-cart-plus"></i> Add to carte</a>
-                                    </div>
-                            </div>
-                                <div class="card py-0 px-0 mb-3" style="width: 13.125rem;">
-                                <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
-                                <span class="prix">23<span id="dollar">$</span> </span>
-                                    <div class="card-body px-0 py-0">
-                                        <h5 class="card-title mt-4 ms-3 mb-2">Tout les Femme</h5>
-                                        <div class="rating ms-3">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i> 
-                                        </div> 
-                                                                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                                        <a href="#" class="btn "> <i class="fa-solid fa-cart-plus"></i> Add to carte</a>
-                                    </div>
-                            </div>
-                                <div class="card py-0 px-0 mb-3" style="width: 13.125rem;">
-                                <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
-                                <span class="prix">23<span id="dollar">$</span> </span>
-                                    <div class="card-body px-0 py-0">
-                                        <h5 class="card-title mt-4 ms-3 mb-2">Tout les Femme</h5>
-                                        <div class="rating ms-3">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i> 
-                                        </div> 
-                                                                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                                        <a href="#" class="btn "> <i class="fa-solid fa-cart-plus"></i> Add to carte</a>
-                                    </div>
-                            </div>
-                                <div class="card py-0 px-0 mb-3" style="width: 13.125rem;">
-                                <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
-                                <span class="prix">23<span id="dollar">$</span> </span>
-                                    <div class="card-body px-0 py-0">
-                                        <h5 class="card-title mt-4 ms-3 mb-2">Tout les Femme</h5>
-                                        <div class="rating ms-3">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i> 
-                                        </div> 
-                                                                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                                        <a href="#" class="btn "> <i class="fa-solid fa-cart-plus"></i> Add to carte</a>
-                                    </div>
-                            </div>
-                                <div class="card py-0 px-0 mb-3" style="width: 13.125rem;">
-                                <img src="themes/image/ebook1.jpg" class="card-img-top" alt="book">
-                                <span class="prix">23<span id="dollar">$</span> </span>
-                                    <div class="card-body px-0 py-0">
-                                        <h5 class="card-title mt-4 ms-3 mb-2">Tout les Femme</h5>
-                                        <div class="rating ms-3">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i> 
-                                        </div> 
-                                                                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                                        <a href="#" class="btn "> <i class="fa-solid fa-cart-plus"></i> Add to carte</a>
-                                    </div>
-                            </div>
+
+                            <?php }  ?>
+
+
                              
                             
 

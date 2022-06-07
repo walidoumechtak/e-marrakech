@@ -1,4 +1,6 @@
-<?php $title ='Contact Us';
+<?php   
+        session_start();
+        $title ='Contact Us';
         $includeF = '';
         $includeContact = '';
         $includeNav = '';
@@ -23,6 +25,28 @@
         </div>
 
 
+        <?php 
+        
+            if(isset($_POST['go'])){
+
+                    $name = $_POST['name'];
+                    $emailFrom = $_POST['email'];
+                    $subject = $_POST['Subject'];
+                    $message = $_POST['message'];
+
+
+                    $emailTo = "woumechtak@gmail.com";
+                    $header = "From : " . $emailFrom;
+
+                    $text = "You have recieved an email from " . $name . "\n\n" . $message;
+
+                    mail($emailTo, $subject,$text, $header);
+                    header("location: contact.php?success");
+                    exit(); 
+            }
+
+        ?>
+
 
         <div class="container">
             <h3 class="mb-5 text-center"><span>Fill </span> Free</h3>
@@ -36,7 +60,7 @@
                     <input type="text" name="sub" placeholder="Subject">
                 </div>
                 <div class="message">
-                    <textarea name="" id="" cols="28" rows="10" placeholder="message"></textarea>
+                    <textarea name="message" id="" cols="28" rows="10" placeholder="message"></textarea>
                 </div>
                 </div>
 

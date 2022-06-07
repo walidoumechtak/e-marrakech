@@ -179,7 +179,7 @@
     padding: 14px;
     position: relative;
 }
-.blogs .item .content-blog h4::before{
+.blogs .item .content-blog h5::before{
     content: '';
     width: 6px;
     height: 31px;

@@ -1,4 +1,7 @@
-<?php include "functions.php" ?>
+<?php 
+    include "functions.php";
+    include "includes/connexion.php";
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,8 +44,15 @@
     <?php if(isset($includeProuctPage)){?>
       <link rel="stylesheet" type="text/css" href="themes/css/product-page.css">
     <?php } ?>
+    <?php if(isset($includeSearch)){?>
+      <link rel="stylesheet" type="text/css" href="themes/css/search-page.css">
+    <?php } ?>
+    <?php if(isset($includeblogPage)){?>
+      <link rel="stylesheet" type="text/css" href="themes/css/blog-page.css">
+    <?php } ?>
     <link rel="stylesheet" type="text/css" href="themes/css/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="themes/css/owl.theme.default.min.css">
+    <script src="themes/js/jquery-3.6.0.min.js"></script>
     <title><?php gettitle(); ?></title>
 </head>
 <body>

@@ -9,6 +9,38 @@ body{
     position: relative;
 }
 
+ /* ============================== registre alert ======================================*/
+
+    .registre-errors{
+        width: 80%;
+        padding: 10px 15px;
+        background-color: rgb(243, 84, 84);
+        color: white;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+}
+
+#registreB:not(:disabled), [type=reset]:not(:disabled), #registreB:not(:disabled), button:not(:disabled) {
+    cursor: pointer !important;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: -6px;
+    right: 2px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+ /* ============================== registre alert ======================================*/
+
+
 body::before{
     content: '';
     width: 50%;
@@ -91,11 +123,12 @@ form .user-details .input-box input{
     outline: none;
     border: none;
     padding-left: 13px;
+    padding-right: 13px;
 }
 
 form .user-details .input-box select {
     height: 40px;
-    padding: 0 13px;
+    padding: 0 13px !important;
     width: 100%;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -105,6 +138,34 @@ form .user-details .input-box select {
     outline: none;
     border: none;
     }
+
+
+    form .user-details .input-box select option{
+        color: white;
+        border-radius: 20px !important;
+        -webkit-border-radius: 20px !important;
+        -moz-border-radius: 20px !important;
+        -ms-border-radius: 20px !important;
+        -o-border-radius: 20px !important;
+        background-color: var(--index);
+}
+
+form .user-details .input-box select option:hover{
+    background-color: white;
+    color: var(--index);
+}
+
+    
+
+    .regex-pass p{
+        color: white;
+        margin-bottom: 0px;
+    }
+    .regex-pass p:last-of-type{
+        margin-bottom: 13px;
+    }
+
+
 
     form .buttons{
         display: flex;
@@ -121,19 +182,19 @@ form .buttons span a{
     color: var(--index);
     font-weight: 600;
 }
-    form .buttons input{
-        border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    outline: none;
-    border: none;
-    padding: 6px 30px;
-    background-color: var(--index);
-    color: white;
-    font-weight:600 ;
-    }
+    form .buttons #subform{
+        border-radius: 20px !important;
+        -webkit-border-radius: 20px !important;
+        -moz-border-radius: 20px !important;
+        -ms-border-radius: 20px !important;
+        -o-border-radius: 20px !important;
+        outline: none !important;
+        border: none !important;
+        padding: 6px 30px !important;
+        background-color: var(--index) !important;
+        color: white !important;
+        font-weight:600 !important;
+}
     
     /* @media only screen and (max-width: 600px){ */
     @media only screen and (max-width: 765px){
@@ -164,7 +225,7 @@ form .buttons span a{
                 display: flex;
                 flex-direction: column-reverse;
             }
-            form .buttons input{
+            form .buttons #subform{
                 width: 100%;
                 margin-bottom: 9px;
             }

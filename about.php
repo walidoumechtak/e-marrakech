@@ -1,4 +1,6 @@
-<?php $title ='About'; 
+<?php   
+        session_start();
+        $title ='About'; 
         $includeNav = '';
         $includeF = '';
         $includeAbout = '';

@@ -17,7 +17,42 @@
     </nav>
 
     <div class="cart-nav">
-           <div class="oui"> <a href="shoping.php"> <i class="fa-solid fa-cart-shopping"></i> </a> <span id="nmb-card">1</span> <span> | </span> <a href="login.php">Login</a></div>
+           <div class="oui">
+                <a href="shoping.php"> <i class="fa-solid fa-cart-shopping"></i> </a> 
+                <span id="nmb-card">1</span> <span> | </span>
+                
+                <?php 
+                    if(!isset($_SESSION['login'])){
+                ?>
+                <a href="login.php">Login</a>
+                <?php
+                    }else{
+                ?>
+                <!-- <a href="profile-user.php"><?php //echo $_SESSION["fullname"] ?> -->
+                
+                
+                <div class="btn-group">
+                    <a  id="user-profile">
+                     <?php echo $_SESSION["fullname"] ?>
+                    </a>
+                     <ul class="dropdown-me">
+                         <i class="fa-solid fa-caret-up"></i>
+                         <?php if(isset($_SESSION['id_admin'])){ ?>
+                         <li><a class="dropdown-it" href="admin/index.php">dashbord</a></li>
+                         <?php } ?>
+                         <li><a class="dropdown-it" href="edite.php">Edit Profile</a></li>
+                         <li><a class="dropdown-it" href="includes/logout.php">Logout</a></li>
+                         
+                        </ul>
+                    </div>
+
+
+
+                <!-- </a> -->
+                <?php
+                }
+                ?>
+            </div>
            <div class="non">
 
            </div>

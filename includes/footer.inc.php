@@ -19,6 +19,20 @@
 
 
                 $(document).ready(function(){
+
+
+                   
+
+                        setTimeout(function() {
+                        $(".login-alert").fadeOut();
+                        }, 2000);
+
+                        setTimeout(function() {
+                        $(".registre-errors").fadeOut();
+                        }, 5000);
+
+
+
                     $('#input-s').focus(function(){
                         $('#input-s').addClass('focus-input');
                     });

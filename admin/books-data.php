@@ -1,6 +1,7 @@
 <?php 
-  include "../includes/connexion.php";
   session_start();
+  ob_start();
+  include "../includes/connexion.php";
 ?>
 
 
@@ -12,7 +13,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Users Control</title>
+  <title>Books Control</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -36,13 +37,11 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.2.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
   <style>
+
+    .datatable img{
+      width: 60px;
+    }
 
 .dataTable-table i{
   font-size: 18px;
@@ -134,11 +133,11 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1> Users Data</h1>
+      <h1> Books Data</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-          <li class="breadcrumb-item">Tables</li>
+          <li class="breadcrumb-item">Books</li>
           <li class="breadcrumb-item active">Data</li>
         </ol>
       </nav>
@@ -150,7 +149,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Users</h5>
+              <h5 class="card-title">Books</h5>
               <!-- <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p> -->
 
               <!-- Table with stripped rows -->
@@ -158,10 +157,9 @@
                 <thead>
                   <tr>
                     <!-- <th scope="col">#</th> -->
-                    <th scope="col">Full Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">D-Birth</th>
-                    <th scope="col">Country</th>
+                    <th scope="col">Book</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Price</th>
                     <th scope="col">Action</th>
                     <!-- <th scope="col">Delete</th> -->
                   </tr>
@@ -170,21 +168,20 @@
 
                 <?php 
                 
-                    $queryU = mysqli_query($con, "select * from users");
+                    $queryB = mysqli_query($con, "select * from books");
 
-                    while($rowUsers = mysqli_fetch_array($queryU)){
+                    while($rowBooks = mysqli_fetch_array($queryB)){
                 ?>
 
 
                   <tr>
                     <!-- <th scope="row"><?php //echo $rowUsers['id_user'] ?></th> -->
-                    <td><?php echo $rowUsers['fullname'] ?></td>
-                    <td><?php echo $rowUsers['email'] ?></td>
-                    <td><?php echo $rowUsers['date_birth'] ?></td>
-                    <td><?php echo $rowUsers['country'] ?></td>
+                    <td> <img src="../<?php echo $rowBooks['image'] ?>" alt="<?php echo $rowBooks['title'] ?>"></td>
+                    <td><?php echo $rowBooks['title'] ?></td>
+                    <td><?php echo $rowBooks['price'] . " $" ?></td>
                     <td>
-                      <a href="forms-user.php?editeU=<?php echo $rowUsers['id_user'] ?>" id="zra9"><i class="bi bi-pencil-fill"></i></a>
-                      <a href="?deleteU=<?php echo $rowUsers['id_user'] ?>" id="hmar"><i class="bi bi-x-circle-fill"></i></a>
+                      <a href="forms-books.php?editeB=<?php echo $rowBooks['id_book'] ?>" id="zra9"><i class="bi bi-pencil-fill"></i></a>
+                      <a href="?deleteB=<?php echo $rowBooks['id_book'];?>" id="hmar"><i class="bi bi-x-circle-fill"></i></a>
                     </td>
                     <!-- <td><a href="" class="btn btn-danger">Delete</a></td> -->
                   </tr>
@@ -192,15 +189,20 @@
                   <?php }
                   
 
-                      if(isset($_GET['deleteU'])){
-                              $idUser = $_GET['deleteU'];
-                              mysqli_query($con,"delete from users where id_user = $idUser");
+                      if(isset($_GET['deleteB'])){
+                              $idBook = $_GET['deleteB'];
+                              mysqli_query($con, "DELETE from books where id_book = $idBook");
+
+                              header("Location: books-data.php");
                               ?>
-                                    <script>
+
+
+
+                                    <!-- <script>
                                       setTimeout(function () {
-                                            window.location.href='users-data.php'; // mossiba m3ak nta
+                                            window.location.href='books-data.php'; // mossiba m3ak nta
                                  },0.5);
-                                    </script>
+                                    </script> -->
                                 <?php
                       }
                       
@@ -244,6 +246,7 @@
 </body>
 
 </html>
+
 <?php }else{
    header("Location: ../index.php");
    exit();

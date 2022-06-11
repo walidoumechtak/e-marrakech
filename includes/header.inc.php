@@ -50,6 +50,16 @@
     <?php if(isset($includeblogPage)){?>
       <link rel="stylesheet" type="text/css" href="themes/css/blog-page.css">
     <?php } ?>
+    <?php if(isset($includeEdite_user)){?>
+      <link rel="stylesheet" type="text/css" href="themes/css/user-profile.css">
+    <?php } ?>
+    <?php if(isset($includeEdite_user_form)){?>
+      <link rel="stylesheet" type="text/css" href="themes/css/user-profile-edit-form.css">
+    <?php } ?>
+    <?php if(isset($includeChangePaa)){?>
+      <link rel="stylesheet" type="text/css" href="themes/css/ChangePass.css">
+    <?php } ?>
+    
     <link rel="stylesheet" type="text/css" href="themes/css/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="themes/css/owl.theme.default.min.css">
     <script src="themes/js/jquery-3.6.0.min.js"></script>

@@ -7,6 +7,7 @@ include "../includes/connexion.php";
           $rowInfoAdmin = mysqli_fetch_array($sqlInfoAdmin);
           $_SESSION['job'] = $rowInfoAdmin['job'];
 ?>
+
 <header id="header" class="header fixed-top d-flex align-items-center">
 
 <div class="d-flex align-items-center justify-content-between">

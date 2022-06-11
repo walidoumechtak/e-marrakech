@@ -74,10 +74,12 @@
 
 let menubutton = document.querySelector('.non');
 let mynav = document.querySelector('nav');
+let myshop = document.getElementById('#cart-nav');
 
 menubutton.onclick = function(){
         this.classList.toggle('active');
         mynav.classList.toggle('active');
+        myshop.classList.toggle('active');
 }
 
 

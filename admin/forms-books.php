@@ -3,9 +3,10 @@
   ob_start();
     include "../includes/connexion.php";
 
-      $id_user = $_GET['editeU'];
-      $queryInfoUser = mysqli_query($con,"select * from users where id_user = $id_user");
-      $rowInfoUser = mysqli_fetch_array($queryInfoUser);
+      $id_book = $_GET['editeB'];
+      $queryInfoBook = mysqli_query($con,"select * from books where 	
+      id_book = $id_book");
+      $rowInfoBook = mysqli_fetch_array($queryInfoBook);
 
 ?>
 
@@ -17,7 +18,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Edite User</title>
+  <title>Edite Book</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -58,12 +59,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>User Information</h1>
+      <h1>book Information</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.php">Home</a></li>
           <li class="breadcrumb-item">Forms</li>
-          <li class="breadcrumb-item active">User</li>
+          <li class="breadcrumb-item active">book</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -83,35 +84,28 @@
               <!-- Vertical Form -->
               <form method="POST" class="row g-3">
                 <div class="col-12">
-                  <label for="inputNanme4" class="form-label">Full Name</label>
-                  <input type="text" class="form-control" id="inputNanme4" name="fullname" value="<?php echo  $rowInfoUser['fullname'] ?>">
+                  <label for="inputNanme4" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="inputNanme4" name="title" value="<?php echo  $rowInfoBook['title'] ?>">
                 </div>
+
+                <!--  -->
+
                 <div class="col-12">
-                  <label for="inputEmail4" class="form-label">Email</label>
-                  <input type="email" class="form-control" name="email" id="inputEmail4" value="<?php echo  $rowInfoUser['email'] ?>">
+                  <label for="inputEmail4" class="col-sm-2 col-form-label">Description</label>
+                  <div class="col-sm-10">
+                    <textarea  name="desc" id="inputEmail4"  class="form-control" style="height: 100px"><?php echo  $rowInfoBook['desc'] ?></textarea>
+                  </div>
                 </div>
+
+
+                <!--  -->
+
+                
                 <div class="col-12">
-                  <label for="inputPassword4" class="form-label">Date of Birth</label>
-                  <input type="date" class="form-control" name="date" id="inputPassword4" value="<?php echo  $rowInfoUser['date_birth'] ?>">
+                  <label for="inputPassword4" class="form-label">Price</label>
+                  <input type="number" class="form-control" name="price" id="inputPassword4" value="<?php echo  $rowInfoBook['price'] ?>">
                 </div>
-                <div class="col-12">
-                  <label for="inputAddress" class="form-label">Country</label>
-
-                  <select class="form-select" name="country" id="inputAddress">
-                      <?php 
-                      
-                          $queryCountry = mysqli_query($con, "select * from country");
-
-                      while($rowCountry = mysqli_fetch_array($queryCountry)){
-                      ?>
-                            <option value="<?php echo $rowCountry['name'] ?>"><?php echo $rowCountry['name'] ?></option>
-                      <?php
-                     }
-                      ?>
-                  </select>
-
-
-                </div>
+              
                 <div class="text-center">
                   <button type="submit" name="go" class="btn btn-primary">Submit</button>
                   <button type="reset" class="btn btn-secondary">Reset</button>
@@ -126,19 +120,16 @@
 
                       if(isset($_POST['go'])){
 
-                            $fullname = $_POST['fullname'];
-                            $email = $_POST['email'];
-                            $date = $_POST['date'];
-                            $country = $_POST['country'];
-
-                          $sqlUpdate =  mysqli_query($con, "UPDATE users set fullname = '$fullname',
-                            email = '$email',
-                            date_birth = '$date',
-                            country = '$country' where id_user = $id_user");
+                            $title = $_POST['title'];
+                            $desc = $_POST['desc'];
+                            $price = $_POST['price'];
+                            
+                          $sqlUpdate =  mysqli_query($con, " UPDATE books SET title = '$title', `desc` = \"$desc\", price = $price
+                           WHERE id_book = $id_book ");
 
                         if($sqlUpdate){
                           
-                              header("Location: users-data.php");
+                              header("Location: books-data.php");
                         }
 
         ?>

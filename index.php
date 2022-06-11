@@ -23,7 +23,7 @@
                     <?php 
                     if(isset($_SESSION['login'])){
                         ?>
-                            <a href="books.php" id="land-btn-1">Check Our Books</a>
+                            <a href="blog.php" id="land-btn-1">Check Our Blogs</a>
                     <?php
                     }   else{
                     ?>
@@ -40,10 +40,10 @@
             </div>
 
             <div class="container search">
-                <form action="" method="POST">
+                <form action="search-page.php" method="POST">
                     <!-- <label for="srch">Find your book here :</label> -->
                     <input type="text" id="srch" name="search" placeholder="Name of the book">
-                    <input type="submit" value="Search">
+                    <input type="submit" value="Search" name="gobook">
                 </form>
             </div>
         </div>
@@ -139,7 +139,7 @@
                                </div>
                             </div>
                                 <div class="image-box">
-                                    <img src="themes/image/ebook1.jpg" alt="ebook">
+                                    <img src="themes/image/booksimage/physics.jpg" alt="ebook">
                                 </div>
                             </div>
                         </div>
@@ -153,19 +153,26 @@
             <div class="tesm my-5">
                 <div class="container">
                         <h2 class="text-center  mb-5">Our Blog</h2>
-                <div class="owl-carousel owl-theme">
-                    <div class="item" >
-                        <img src="themes/blogImage/129.jpeg" alt="">
-                        <div class="content-blog">
-                        <h4>The computer siences</h4>
-                        <p class="mt-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus? walid oumechtak</p>
+
+                        <?php 
                         
-                        <a href="#">Read More</a>
-                        <span>25 octobre</span>
+                                    $blog_query = mysqli_query($con, "SELECT * from blogs LIMIT 10");
+                                
+                        ?>
+
+                <div class="owl-carousel owl-theme">
+                    <?php  while($blog_row = mysqli_fetch_array($blog_query)){    ?>
+                    <div class="item" >
+                        <img src="<?php echo $blog_row['bloogImage'] ?>" alt="">
+                        <div class="content-blog">
+                        <h4><?php echo $blog_row['titre'] ?></h4>
+                        <p class="mt-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus? walid oumechtak</p>
+                        <a href="blog-page.php?idBlog=<?php echo $blog_row['id_blog'] ?>">Read More</a>
+                        <span><?php echo $blog_row['dateCreation'] ?></span>
 
                         </div>
                     </div>
-                   
+                   <?php } ?>
                     
                 </div>
                 </div>

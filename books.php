@@ -64,7 +64,7 @@
                                         while($rowBook = mysqli_fetch_array($queryBook)){
                                 ?>                                
                                 <div class="card py-0 px-0 mb-3" style="width: 13.125rem;">
-                                <img src="<?php echo $rowBook['image'] ?>" class="card-img-top" alt="book">
+                              <a href="product-page.php?id_pro=<?php echo $rowBook['id_book']?>&idCat=<?php echo $id_cat ?>">  <img src="<?php echo $rowBook['image'] ?>" class="card-img-top" alt="book"> </a>
                                 <span class="prix"><?php echo $rowBook['price'] ?><span id="dollar">$</span> </span>
                                     <div class="card-body px-0 py-0">
                                         <h5 class="card-title mt-4 ms-3 mb-2"><?php echo $rowBook['title'] ?></h5>
@@ -72,7 +72,7 @@
                                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i> 
                                         </div> 
                                                                                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                                        <a href="product-page.php?id_pro=<?php echo $rowBook['id_book'] ?>" class="btn "> <i class="fa-solid fa-cart-plus"></i> Add to carte</a>
+                                        <a href="" class="btn "> <i class="fa-solid fa-cart-plus"></i> Add to carte</a>
                                     </div>
                             </div>
 

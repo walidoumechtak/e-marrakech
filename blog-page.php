@@ -1,4 +1,6 @@
-<?php $title ='Blog';
+<?php   
+        session_start();
+        $title ='Blog';
         $includeF = '';
         $includeNav = '';
         $includeblogPage = "";
@@ -14,43 +16,38 @@
 
 
     <div class="container blog-container">
+
+        <?php 
+        
+                if(isset($_GET['idBlog'])){
+                            $idBlog = $_GET['idBlog'];
+
+                        $queryBlog = mysqli_query($con,"select * from blogs
+                        where id_blog = $idBlog");
+
+                        $rowBlog = mysqli_fetch_array($queryBlog);
+                }
+        
+        ?>
+
+
         <div class="blogContent mb-5">
-                <h1 class="text-center my-4">Title of blog</h1>
+                <h1 class="text-center my-4"><?php echo $rowBlog['titre'] ?></h1>
                 <div class="image-blog">
-                <img class="img-fluid rounded mb-4" src="themes/blogImage/129.jpeg" alt="blog1">   
+                <img src="<?php echo $rowBlog['bloogImage'] ?>" class="img-fluid rounded mb-4"  alt="<?php echo $rowBlog['titre'] ?>">   
                 </div>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                    Veniam, libero magni consequatur natus hic quisquam dolorem voluptatibus? 
-                    Dicta temporibus voluptas impedit consectetur cumque incidunt unde iure nihil provident,
-                     in sequi.
-                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                    Veniam, libero magni consequatur natus hic quisquam dolorem voluptatibus? 
-                    Dicta temporibus voluptas impedit consectetur cumque incidunt unde iure nihil provident,
-                     in sequi.
-                </p>
+                
+                    <?php 
+                    
+                    echo $rowBlog['contenu'];
 
-                <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                    Veniam, libero magni consequatur natus hic quisquam dolorem voluptatibus? 
-                    Dicta temporibus voluptas impedit consectetur cumque incidunt unde iure nihil provident,
-                     in sequi.
-                </p>
+                    ?>
 
-                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                    Veniam, libero magni consequatur natus hic quisquam dolorem voluptatibus? 
-                    Dicta temporibus voluptas impedit consectetur cumque incidunt unde iure nihil provident,
-                     in sequi.
-                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                    Veniam, libero magni consequatur natus hic quisquam dolorem voluptatibus? 
-                    Dicta temporibus voluptas impedit consectetur cumque incidunt unde iure nihil provident,
-                     in sequi.</p>
-
-                     <p> 
+                     <!-- <p> 
                         Veniam, libero magni consequatur natus hic quisquam dolorem voluptatibus? 
                         Dicta temporibus voluptas impedit consectetur cumque incidunt unde iure nihil provident,
                         in sequi.
-                    </p>
+                    </p> -->
         </div>
     </div>
 

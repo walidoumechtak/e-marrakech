@@ -11,6 +11,9 @@
                         $_SESSION['job'] = $rowInfoAdmin['job'];
                   
 ?>
+
+
+<?php  if(isset($_SESSION['login'])){ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,13 +44,60 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <script src="../themes/js/jquery-3.6.0.min.js"></script>
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.2.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    /* ============================= alert admin =========================*/
+
+
+    .admin-alert-success{
+      background-color: #4BB543 !important;
+      color: white;
+      width: 80% !important;
+        padding: 10px 15px !important;
+        position: absolute !important;
+        top: 10px !important;
+        left: 50% !important;
+    }
+
+    .admin-alert{
+        width: 80% !important;
+        padding: 10px 15px !important;
+        background-color: rgb(243, 84, 84) !important;
+        color: white !important;
+        position: absolute !important;
+        top: 10px !important;
+        left: 50% !important;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+}
+
+    #registreB:not(:disabled), [type=reset]:not(:disabled), #registreB:not(:disabled), #registreB:not(:disabled) {
+        cursor: pointer !important;
+        color: white;
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        font-weight: bold;
+        font-size: 24px;
+    } 
+
+
+
+/* ============================= alert admin =========================*/
+  </style>
+
+  
 </head>
 
 <body>
@@ -114,6 +164,10 @@
 
                 <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
                 </li>
 
                 
@@ -270,7 +324,7 @@
                           ?>
                           <script>
                           setTimeout(function () {
-                              window.location.href='users-profile.php'; // the redirect goes here
+                              window.location.href='users-profile.php'; 
 
                           },1);
                           </script>
@@ -289,6 +343,101 @@
 
                   </form><!-- End Profile Edit Form -->
 
+                </div>
+
+
+                <!-- =======================  change pasowrd php ============================ -->
+
+                    <?php 
+
+                      if(isset($_POST['changePass'])){
+
+                            $currentPassFromDatabases = $rowInfoAdmin['password'];
+                            $currentPass = $_POST['password'];
+                            $newpassword = $_POST['newpassword'];
+                            $renewpassword = $_POST['renewpassword'];
+
+                            if($newpassword == $renewpassword){
+                                  $password = sha1($currentPass);
+                                  if($password == $currentPassFromDatabases){
+                                        $finalPassowrd = sha1($newpassword);
+                                        $sqlPassword = mysqli_query($con, "UPDATE admins set password = '$finalPassowrd' where id_admin = $idA");
+                                        if($sqlPassword){
+                                        echo "<div class='admin-alert-success alert alert-dismissible fade show' role='alert'>
+                                        Password chagne successufuly
+                                    <button id='registreB' type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                        <span aria-hidden='true'>&times;</span>
+                                    </button>
+                                    </div>";
+                                     }
+                                   }else{
+                                    echo "<div class='admin-alert alert alert-dismissible fade show' role='alert'>
+                                        The currente password and the new password are not match
+                                    <button id='registreB' type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                        <span aria-hidden='true'>&times;</span>
+                                    </button>
+                                    </div>";
+                                    $finalPassowrd = sha1($currentPass);
+                                  }
+                            }else{
+                              echo "<div class='admin-alert alert alert-dismissible fade show' role='alert'>
+                              the confirmation password is not inccorect
+                              <button id='registreB' type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                  <span aria-hidden='true'>&times;</span>
+                              </button>
+                              </div>";
+                              $finalPassowrd = sha1($currentPass);
+                            }
+                            
+
+                            // $sqlPassword = mysqli_query($con, "UPDATE admins set password = '$finalPassowrd' ");
+
+                      }
+
+                    
+                    ?>
+
+                    <script>
+                      setTimeout(function() {
+                        $(".admin-alert").fadeOut();
+                        }, 2000);
+                      setTimeout(function() {
+                        $(".admin-alert-success").fadeOut();
+                        }, 2000);
+                    </script>
+
+                <!-- =======================  change pasowrd php ============================ -->
+
+
+                <div class="tab-pane fade pt-3" id="profile-change-password">
+                  <!-- Change Password Form -->
+                  <form method="POST">
+
+                    <div class="row mb-3">
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="password" type="password" class="form-control" id="currentPassword">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="newpassword" type="password" class="form-control" id="newPassword">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary" name="changePass">Change Password</button>
+                    </div>
+                  </form><!-- End Change Password Form -->
                 </div>
 
                 
@@ -313,6 +462,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="../themes/js/bootstrap.min.js"></script>
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/chart.js/chart.min.js"></script>
@@ -323,8 +473,14 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
+
   <script src="assets/js/main.js"></script>
 
 </body>
 
 </html>
+
+<?php }else{
+   header("Location: ../index.php");
+   exit();
+ } ?>

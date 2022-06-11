@@ -179,6 +179,11 @@ header .cart-nav a:hover{
     background-size: cover;
 } 
 
+
+header .dipani{
+    display: none;
+}
+
  
 
 
@@ -222,6 +227,30 @@ header .cart-nav a:hover{
             font-weight: 600;
         }
 
+        header .dipani{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header .dipani .shop-div{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100px;
+        }
+
+      
+        
+
+        header .dipani #nmb-card {
+            margin-right: 10px;
+            padding: 3px 11px;
+            width: 31px;
+            height: 31px;
+            margin-bottom: -40px;
+            font-weight: 700;
+        }
+
         header .non.active{
             width: 25px;
             height: 25px;
@@ -250,26 +279,14 @@ header .cart-nav a:hover{
 
 
         header nav a::before{
-            top: 37px;
-            height: 4px;
+            content:'';
+            background-color: transparent;
+            width: 0%;
+            height: 0%;
+
         }
         
-        header nav a:hover:first-child::before{
-            width: 69px;
-        }
-        header nav a:hover:nth-child(2):before{
-            width: 69px;
-        }
-        header nav a:hover:nth-child(3):before{
-            width: 110px;
-        }
-        header nav a:hover:nth-child(4):before{
-            width: 101px;
-        }
-        header nav a:hover:last-child::before{
-            width: 126px;
-        }
-
+      
 } 
 
 

@@ -15,7 +15,7 @@
 
                 if(isset($_POST['go'])){
                 $email = $_POST['email'];
-                $pass = $_POST['pass'];
+                $pass = sha1($_POST['pass']);
 
 
                 // admins sql ==========================================================================================
@@ -102,7 +102,7 @@
     </div>
 
 
-
+    <script src="../themes/js/bootstrap.min.js"></script>
 <?php
         include "includes/footer.inc.php"; 
 ?>

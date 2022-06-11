@@ -62,6 +62,18 @@
         </div>
 
 
+            <?php 
+            
+                    $countBook = mysqli_query($con, "select count(*) as cptBook from books");
+                    $countBlog = mysqli_query($con, "select count(*) as cptBlog from blogs");
+
+                    $rowCountBook = mysqli_fetch_array($countBook);
+                    $rowCountblog = mysqli_fetch_array($countBlog);
+
+            
+            ?>
+
+
         <div class="inourstore">
             <div class="container">
                 <h2 class="text-center mb-5"><span>In Our</span> Store</h2>
@@ -71,7 +83,7 @@
                         <div class="box box1">
                             <div class="title-count">
                                 <h3>Books</h3>
-                                <h1>1289</h1>
+                                <h1><?php echo $rowCountBook['cptBook'] ?></h1>
                             </div>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -86,7 +98,7 @@
                         <div class="box box2">
                             <div class="title-count">
                                 <h3>Bolg</h3>
-                                <h1>14</h1>
+                                <h1><?php echo $rowCountblog['cptBlog'] ?></h1>
                             </div>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit.

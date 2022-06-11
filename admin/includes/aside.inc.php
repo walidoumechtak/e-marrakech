@@ -10,51 +10,61 @@
   </li><!-- End Dashboard Nav -->
 
 
-  <!-- <li class="nav-item">
-    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-      <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
-    </a>
-    <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-      <li>
-        <a href="forms-elements.php">
-          <i class="bi bi-circle"></i><span>Form Elements</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms-layouts.php">
-          <i class="bi bi-circle"></i><span>Form Layouts</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms-editors.php">
-          <i class="bi bi-circle"></i><span>Form Editors</span>
-        </a>
-      </li>
-      <li>
-        <a href="forms-validation.php">
-          <i class="bi bi-circle"></i><span>Form Validation</span>
-        </a>
-      </li>
-    </ul>
-  </li> End Forms Nav 
+ 
+
+
+
 
   <li class="nav-item">
-    <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+    <!-- <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
       <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a> -->
+    <a class="nav-link collapsed"  data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-book-fill"></i>
+      <span>Books</span>
+      <i class="bi bi-chevron-down ms-auto"></i>
     </a>
     <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="tables-general.php">
-          <i class="bi bi-circle"></i><span>General Tables</span>
+        <a href="books-data.php">
+          <i class="bi bi-circle"></i><span>Show Books</span>
         </a>
       </li>
       <li>
-        <a href="tables-data.php">
-          <i class="bi bi-circle"></i><span>Data Tables</span>
+        <a href="add-book.php">
+          <i class="bi bi-circle"></i><span>Add Books</span>
         </a>
       </li>
     </ul>
-  </li>End Tables Nav -->
+  </li>
+
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+    <i class="bi bi-file-text-fill"></i>
+      <span>Blogs</span>
+      <i class="bi bi-chevron-down ms-auto"></i>
+    </a> 
+
+
+ 
+    <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+      <li>
+        <a href="blog-data.php">
+          <i class="bi bi-circle"></i><span>Show Blog  </span>
+        </a>
+      </li>
+      <li>
+        <a href="add-blog.php">
+          <i class="bi bi-circle"></i><span>Add Blog</span>
+        </a>
+      </li>
+    </ul>
+  </li> 
+  
+
+
+
 
 
 
@@ -66,21 +76,14 @@
     </a>
   </li>
 
-  <li class="nav-item">
+  <!-- <li class="nav-item">
     <a class="nav-link collapsed" href="users-profile.php">
-      <!-- <i class="bi bi-person"></i> -->
       <i class="bi bi-book-fill"></i>
       <span>Products</span>
     </a>
-  </li>
+  </li> -->
 
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="users-profile.php">
-      <!-- <i class="bi bi-person"></i> -->
-      <i class="bi bi-file-text-fill"></i>
-      <span>Blogs</span>
-    </a>
-  </li>
+
   
 
   <li class="nav-heading">Admin</li>

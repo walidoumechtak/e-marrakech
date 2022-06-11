@@ -14,9 +14,52 @@
         <a href="about.php">About Us</a>
         <a href="blog.php">Our Blog</a>
         <a href="contact.php">Contact Us</a>
+        <div class="dipani">
+            <div class="shop-div">
+                <a class="ntala1" href="shoping.php"> <i class="fa-solid fa-cart-shopping"></i> </a> 
+                <span id="nmb-card">1</span>
+                </div>
+                <?php 
+                    if(!isset($_SESSION['login'])){
+                ?>
+                <a class="ntala1" href="login.php">Login</a>
+                <?php
+                    }else{
+                ?>
+                <!-- <a href="profile-user.php"><?php //echo $_SESSION["fullname"] ?> -->
+                
+                
+                <div class="btn-group">
+                    <a class="ntala1" id="user-profile">
+                     <?php echo $_SESSION["fullname"] ?>
+                    </a>
+                     <ul class="dropdown-me">
+                         <i class="fa-solid fa-caret-up"></i>
+                         <?php if(isset($_SESSION['id_admin'])){ ?>
+                         <li><a class="ntala1 dropdown-it" href="admin/index.php">dashbord</a></li>
+                         <?php } ?>
+                         <li><a class="ntala1 dropdown-it" href="<?php 
+                       if(isset($_SESSION['id_admin'])){
+                            echo 'admin/users-profile.php';
+                       }else{
+                           echo 'user-profile.php';
+                       }
+                        ?>">Profile</a></li>
+                         <li><a  class="ntala1 dropdown-it" href="includes/logout.php">Logout</a></li>
+                         
+                        </ul>
+                    </div>
+
+
+
+                <!-- </a> -->
+                <?php
+                }
+                ?>
+            </div>
     </nav>
 
-    <div class="cart-nav">
+    <div class="cart-nav" id="cart-nav">
            <div class="oui">
                 <a href="shoping.php"> <i class="fa-solid fa-cart-shopping"></i> </a> 
                 <span id="nmb-card">1</span> <span> | </span>
@@ -40,7 +83,13 @@
                          <?php if(isset($_SESSION['id_admin'])){ ?>
                          <li><a class="dropdown-it" href="admin/index.php">dashbord</a></li>
                          <?php } ?>
-                         <li><a class="dropdown-it" href="edite.php">Edit Profile</a></li>
+                         <li><a class="dropdown-it" href="<?php 
+                       if(isset($_SESSION['id_admin'])){
+                            echo 'admin/users-profile.php';
+                       }else{
+                           echo 'user-profile.php';
+                       }
+                        ?>">Profile</a></li>
                          <li><a class="dropdown-it" href="includes/logout.php">Logout</a></li>
                          
                         </ul>

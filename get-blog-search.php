@@ -15,7 +15,7 @@
                                     <div class="content-blog">
                                         <h5><?php echo $row1['titre'] ?></h5>
                                         <p class="mt-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus? walid oumechtak</p>
-                                        <a class="ms-5" href="#">Read More</a>
+                                        <a class="ms-5" href="blog-page.php?idBlog=<?php echo $row1['id_blog'] ?>">Read More</a>
                                         <span class="ms-4"><?php echo $row1['dateCreation'] ?></span>
                                     </div>
                                  </div>
@@ -39,7 +39,7 @@
                     <div class="content-blog">
                         <h5><?php echo $row2['titre'] ?></h5>
                         <p class="mt-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus? walid oumechtak</p>
-                        <a class="ms-5" href="#">Read More</a>
+                        <a class="ms-5" href="blog-page.php?idBlog=<?php echo $row2['id_blog'] ?>">Read More</a>
                         <span class="ms-4"><?php echo $row2['dateCreation'] ?></span>
                     </div>
                  </div>
